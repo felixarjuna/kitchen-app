@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    padding: 0 16px;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("./assets/background.jpg");
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content */
+    height: 20%; width: 20%; /* Using Glen Maddern's trick /via @mente */
+    /* don't forget to use the prefixes you need */
+    transform: scale(5);
+    transform-origin: top left;
+    filter: blur(2px);
+    margin: auto -16px;
+}
+
+
+header {
+    background-color: #000;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }
+  
+footer p {
+    color: #ccc;
+}
+
+.container {
+    width: 100%;
+    margin: 30px auto;
+    height: auto;
+    min-height: 10px;
+    max-width: 300px;
+    background: #f1f5f8;
+    border-radius: 20px;
+    box-shadow: 4px 3px 7px 2px #00000040;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.form input {
+    background-color: transparent;
+    padding: 0.5rem;
+    border-bottom-right-radius: 15px 3px;
+    border-bottom-left-radius: 3px 15px;
+    border: solid 3px transparent;
+    border-bottom: dashed 3px #000;
+    font-family: "Architects Daughter", cursive;
+    font-size: 1.2rem;
+    color: hsla(260, 2%, 25%, 0.7);
+    width: 90%;
+    margin-bottom: 0.6rem;
+}
+
+button {
+    margin: 10px;
+    padding: 0;
+    border: none;
+    font-family: "Architects Daughter", cursive;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    background-color: #000;
+    display: block;
+    margin: 0 auto;
+}
+
+button span {
+    background: #f1f5f8;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid hsl(198, 1%, 29%);
+  }
+
+.container::before {
+    content: 'Add Ingredient';
+    transform: rotate(2deg);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: #000;
+    font-size: 1.0rem;
+    color: white;   
+    position: relative;
+    top: -20px;
+    left: 55px;
+}
+
+.ingredients-list {
+    width: 100%;
+    margin: 30px auto;
+    height: auto;
+    min-height: 300px;
+    min-width: 300px;
+    background: #f1f5f8;
+    border-radius: 20px;
+    box-shadow: 4px 3px 7px 2px #00000040;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.ingredients-list::before {
+    content: "Our Ingredients";
+    transform: rotate(5deg);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: #000;
+    font-size: 1.5rem;
+    color: white;   
+    position: relative;
+    top: -20px;
+}
+
+
+::placeholder{
+    opacity: 0.3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 0.4rem;
+    border-bottom: 2px solid #000;
+    text-align: left;
+}
+
+td {    
+    padding: 0.4rem;
+    border-bottom: 0.15rem groove #ccc;
+    text-align: left;
+}
