@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kitchen-app/static/css/main.8aad7354.css",
-    "main.js": "/kitchen-app/static/js/main.427e05b1.js",
+    "main.js": "/kitchen-app/static/js/main.b0e093de.js",
     "static/media/background.jpg": "/kitchen-app/static/media/background.da50dc40819596ebb6e0.jpg",
     "index.html": "/kitchen-app/index.html",
     "main.8aad7354.css.map": "/kitchen-app/static/css/main.8aad7354.css.map",
-    "main.427e05b1.js.map": "/kitchen-app/static/js/main.427e05b1.js.map"
+    "main.b0e093de.js.map": "/kitchen-app/static/js/main.b0e093de.js.map"
   },
   "entrypoints": [
     "static/css/main.8aad7354.css",
-    "static/js/main.427e05b1.js"
+    "static/js/main.b0e093de.js"
   ]
 }
