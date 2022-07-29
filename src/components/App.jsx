@@ -2,23 +2,42 @@ import Header from "./Header";
 import InputArea from "./InputArea";
 import Ingredients from "./Ingredients";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/ingredients")
+      .then((res) => {
+        setIngredients(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   function addIngredients(inputText) {
-    setIngredients((prevItems) => {
-      return [...prevItems, inputText];
-    });
+    const newIngredient = {
+      name: inputText[0],
+      amount: inputText[1],
+    };
+
+    axios
+      .post("http://localhost:5000/ingredients/add", newIngredient)
+      .then((res) => console.log(res.data));
+
+    window.location = "/kitchen-app/";
   }
 
   function deleteItem(id) {
-    setIngredients((prevItems) => {
-      return prevItems.filter((item, index) => {
-        return index !== id;
-      });
-    });
+    axios
+      .delete("http://localhost:5000/ingredients/" + id)
+      .then((res) => console.log(res));
+
+    window.location = "/kitchen-app/";
   }
 
   return (
@@ -33,7 +52,7 @@ function App() {
             <th>Name</th>
             <th>Amount</th>
           </tr>
-          {ingredients.map((ingredient, index) => {
+          {ingredients?.map((ingredient, index) => {
             return (
               <Ingredients
                 key={index}

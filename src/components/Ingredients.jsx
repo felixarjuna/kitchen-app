@@ -1,14 +1,18 @@
 import React from "react";
 
 function Ingredients(props) {
+  const name = props.itemName.name;
+  const amount = props.itemName.amount;
+  const id = props.itemName._id;
+
   return (
     <tr
       onClick={() => {
-        return props.deleteItem(props.id);
+        return props.deleteItem(id);
       }}
     >
-      <td>{props.itemName[0]}</td>
-      <td>{props.itemName[1]}</td>
+      <td>{name}</td>
+      <td>{amount}</td>
     </tr>
   );
 }
