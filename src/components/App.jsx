@@ -29,7 +29,7 @@ function App() {
       .post("http://localhost:5000/ingredients/add", newIngredient)
       .then((res) => console.log(res.data));
 
-    window.location = "/kitchen-app/";
+    window.location = "/";
   }
 
   function deleteItem(id) {
@@ -37,7 +37,7 @@ function App() {
       .delete("http://localhost:5000/ingredients/" + id)
       .then((res) => console.log(res));
 
-    window.location = "/kitchen-app/";
+    window.location = "/";
   }
 
   return (

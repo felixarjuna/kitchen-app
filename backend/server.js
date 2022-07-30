@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 
 require("dotenv").config({ path: "./config.env" });
 
@@ -22,6 +23,17 @@ connection.once("open", () => {
 
 // Add Routes
 app.use(require("./routes/ingredients"));
+
+
+// Server static assets if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("../build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+  });
+}
 
 const ingredientsRouter = require("./routes/ingredients");
 
